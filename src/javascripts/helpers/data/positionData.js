@@ -14,8 +14,9 @@ const getAllPositionsByMachineId = (machineId) => new Promise((resolve, reject) 
         positions.push(demPositions[fbId]);
       });
 
-
-      resolve(positions[0]);
+      // order positions A1, A2, A3, B1, B2, B3, C1, C2, C3
+      const sortedPositions = positions.sort((a, b) => a.position.localeCompare(b.position, 'en', { numeric: true }));
+      resolve(sortedPositions);
     })
     .catch((error) => reject(error));
 });

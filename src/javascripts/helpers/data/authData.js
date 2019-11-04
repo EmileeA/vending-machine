@@ -12,8 +12,10 @@ const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // someone is logged in - we should NOT see auth component
+      // stockDiv is the content
       stockDiv.removeClass('hide');
       logoutNavbar.removeClass('hide');
+      // auth div login button
       authDiv.addClass('hide');
     } else {
       // nobody logged in SHOW auth component
