@@ -14,7 +14,6 @@ const getAllSnackPositionsByMachineId = (machineId) => new Promise((resolve, rej
         demSnackPositions[fbId].id = fbId;
         snackPositions.push(demSnackPositions[fbId]);
       });
-
       resolve(snackPositions);
     })
     .catch((error) => reject(error));
@@ -22,4 +21,6 @@ const getAllSnackPositionsByMachineId = (machineId) => new Promise((resolve, rej
 
 const deleteSnackPosition = (snackPositionId) => axios.delete(`${baseUrl}/snackPositions/${snackPositionId}.json`);
 
-export default { getAllSnackPositionsByMachineId, deleteSnackPosition };
+const createSnackPosition = (newSnackPosition) => axios.post(`${baseUrl}/snackPositions.json`, newSnackPosition);
+
+export default { getAllSnackPositionsByMachineId, deleteSnackPosition, createSnackPosition };
