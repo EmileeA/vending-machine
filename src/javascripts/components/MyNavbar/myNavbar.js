@@ -20,7 +20,7 @@ const logoutEvent = () => {
         logoutButton.addClass('hide');
         // this is content on the page that I DON'T want to see when I'm logged out
         stockDiv.addClass('hide');
-      }).catch((iceCream) => console.error('you\'re still logged in', iceCream));
+      }).catch((err) => console.error('you\'re still logged in', err));
   });
 };
 
