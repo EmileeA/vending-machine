@@ -1,6 +1,6 @@
 {
   "snack1": {
-    "imageURL": "https://target.scene7.com/is/image/Target/GUEST_3d2a8073-36e6-4cec-8c8c-872639105820?wid=325&hei=325&qlt=80&fmt=webp",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/I/91wDGontRkL._SX355_.jpg",
     "name": "Skittles",
     "price": 75,
     "currentStocked": 2,
@@ -8,7 +8,7 @@
     "uid": "EzMVWtDVdQe87LFxo3GFS3hONVs1"
   },
   "snack2": {
-    "imageURL": "https://target.scene7.com/is/image/Target/GUEST_3d2a8073-36e6-4cec-8c8c-872639105820?wid=325&hei=325&qlt=80&fmt=webp",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/I/51H3%2B4QuKIL.jpg",
     "name": "m&M",
     "price": "75",
     "currentStocked": 5,
@@ -16,7 +16,7 @@
     "uid": "EzMVWtDVdQe87LFxo3GFS3hONVs1"
   },
   "snack3": {
-    "imageURL": "https://target.scene7.com/is/image/Target/GUEST_3d2a8073-36e6-4cec-8c8c-872639105820?wid=325&hei=325&qlt=80&fmt=webp",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/I/51t8KAKbYtL.jpg",
     "name": "Cool Ranch D",
     "price": 100,
     "currentStocked": 15,
@@ -24,7 +24,7 @@
     "uid": "EzMVWtDVdQe87LFxo3GFS3hONVs1"
   },
   "snack4": {
-    "imageURL": "https://target.scene7.com/is/image/Target/GUEST_3d2a8073-36e6-4cec-8c8c-872639105820?wid=325&hei=325&qlt=80&fmt=webp",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/I/51lNFWSGZVL.jpg",
     "name": "Cup Noodles (Shrimp)",
     "price": 200,
     "currentStocked": 5,
@@ -32,7 +32,7 @@
     "uid": "EzMVWtDVdQe87LFxo3GFS3hONVs1"
   },
   "snack5": {
-    "imageURL": "https://target.scene7.com/is/image/Target/GUEST_3d2a8073-36e6-4cec-8c8c-872639105820?wid=325&hei=325&qlt=80&fmt=webp",
+    "imageURL": "https://ship.kroger.com/img/Products/500/Slim-Jim/Slim-Jim-Smoked-Beef-Sticks-Original-026200144436.jpg",
     "name": "Slim Jim",
     "price": 3000,
     "currentStocked": 5,
