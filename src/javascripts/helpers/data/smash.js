@@ -16,7 +16,10 @@ const getCompleteMachine = () => new Promise((resolve, reject) => {
     .then((singleMachine) => positionData.getAllPositionsByMachineId(singleMachine.id))
     // get the position of my singleMachine
     .then((positions) => {
-      // getAllSnackPositionsByMachineId is a method I built in exported snackPostionData object (when you're exporting data you are creating an object then you call the object whatever you want "snackpositiondata" and then you can refer to whatever methods are on that object by calling it. It's a function when you write it its a method when you export it)
+      // getAllSnackPositionsByMachineId is a method I built in exported snackPostionData object
+      // (when you're exporting data you are creating an object then you call the object whatever you want "snackpositiondata"
+      // and then you can refer to whatever methods are on that object by calling it.
+      // It's a function when you write it its a method when you export it)
       snackPositionData.getAllSnackPositionsByMachineId(positions[0].machineId)
       // snackPositions is the data that's coming back from the promise.
         .then((snackPositions) => {
@@ -26,7 +29,8 @@ const getCompleteMachine = () => new Promise((resolve, reject) => {
             positions.forEach((position) => {
               // "..." is a spread operator
               const newP = { ...position };
-              // for each position, find those snacks that match this Id. ".find" is an array method. Essentially, you are trying to find the snack position that where the position id and the new position id is equivlant
+              // for each position, find those snacks that match this Id. ".find" is an array method.
+              // Essentially, you are trying to find the snack position that where the position id and the new position id is equivlant
               const getSnackPosition = snackPositions.find((x) => x.positionId === newP.id);
               console.log(getSnackPosition);
               // if it finds a match then it's going to do... going and finding the snack that's in that position.
@@ -49,4 +53,30 @@ const getCompleteMachine = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getCompleteMachine };
+const getSnacksWithPositions = (uid) => new Promise((resolve, reject) => {
+  machineData.getMachine()
+    .then((singleMachine) => positionData.getAllPositionsByMachineId(singleMachine.id))
+    .then((positions) => {
+      snackPositionData.getAllSnackPositionsByMachineId(positions[0].machineId)
+        .then((snackPositions) => {
+          snackData.getSnacksByUid(uid).then((snacks) => {
+            const newSnacks = [];
+            snacks.forEach((snack) => {
+              const newSnack = { ...snack };
+              const getSnackPosition = snackPositions.find((x) => x.snackId === newSnack.id);
+              if (getSnackPosition) {
+                const getPosition = positions.find((x) => x.id === getSnackPosition.positionId);
+                newSnack.position = getPosition;
+              } else {
+                newSnack.position = {};
+              }
+              newSnacks.push(newSnack);
+            });
+            resolve(newSnacks);
+          });
+        });
+    })
+    .catch((error) => reject(error));
+});
+
+export default { getCompleteMachine, getSnacksWithPositions };
