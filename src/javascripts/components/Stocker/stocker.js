@@ -54,7 +54,9 @@ const buildTheStocker = (uid) => {
         domString += stockCard.makeASnack(snack);
       });
       domString += '</div>';
+      // stock is the div id that we are printing this domString to
       utilities.printToDom('stock', domString);
+      // so the delete-snack-position button is actually the "Remove from A1, A2, A3"
       $('#stock').on('click', '.delete-snack-position', deleteFromMachine);
       $('#stock').on('click', '.add-snack-position', addToMachine);
     })

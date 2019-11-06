@@ -27,7 +27,7 @@ const getCompleteMachine = () => new Promise((resolve, reject) => {
             const newPositions = [];
             // "forEach((position)" position is the object that I'm iterating over
             positions.forEach((position) => {
-              // "..." is a spread operator
+              // "..." is a spread operator, you are nonpm stat creating multiple references - you are cloning.
               const newP = { ...position };
               // for each position, find those snacks that match this Id. ".find" is an array method.
               // Essentially, you are trying to find the snack position that where the position id and the new position id is equivlant
@@ -35,6 +35,7 @@ const getCompleteMachine = () => new Promise((resolve, reject) => {
               console.log(getSnackPosition);
               // if it finds a match then it's going to do... going and finding the snack that's in that position.
               if (getSnackPosition) {
+                // .find is a method that  === is a boolean
                 const snack = snacks.find((x) => x.id === getSnackPosition.snackId);
                 newP.snack = snack;
               } else {
