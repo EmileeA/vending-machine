@@ -9,6 +9,7 @@ const makeASnack = (snack) => {
   </div>
   <div class="card-footer">`;
   if (snack.snackPositionId !== '') {
+  // where is snack.position.position being called from? I think it is from stocker.js either the addToMachine or BuildTheStocker function.. how can we use something if we are not importing it.
     domString += `<button class="btn btn-danger delete-snack-position" id="${snack.snackPositionId}">Remove from ${snack.position.position}</button>`;
   } else {
     domString += `<input type="text" placeholder="A3"/><button class="btn btn-success add-snack-position" id="${snack.id}">Add to Machine</button>`;
